@@ -77,6 +77,8 @@ h1 {
     gap: 15px;
     max-width: 92vw;
     margin: 20px auto;
+    padding-bottom: 150px;
+
 }
 
 .task-area {
@@ -86,6 +88,7 @@ h1 {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    scroll-margin-top: 150px;
 }
 
 article > h3 {
