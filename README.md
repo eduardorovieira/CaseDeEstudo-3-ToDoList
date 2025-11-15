@@ -14,10 +14,10 @@ A matriz divide as tarefas em quatro quadrantes, cada um representado por uma co
 
 | Quadrante | Cor | Ação |
 | :--- | :--- | :--- |
-| **Urgente e Importante** | Vermelho | **Fazer o quanto antes** |
+| **Urgente e Importante** | Vermelho | **Fazer** |
 | **Não Urgente e Importante** | Amarelo | **Agendar** |
 | **Urgente e Não Importante** | Azul | **Delegar** |
-| **Não Urgente e Não Importante** | Verde | **Tarefas para repensar** |
+| **Não Urgente e Não Importante** | Verde | **Repensar** |
 
 ---
 

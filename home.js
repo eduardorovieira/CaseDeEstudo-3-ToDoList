@@ -1,5 +1,5 @@
 function inicializeAll(formId, inputId, taskId) {
-  //aqui eu seleciono os elementos do HTL usando seus respectivos IDs, transformo em variáveis e uso as variáveis no final do código para "chamar" os elementos, então eu nã preciso criar vários blocos repetidos de código para cada seção.
+    //aqui eu seleciono os elementos do HTL usando seus respectivos IDs, transformo em variáveis e uso as variáveis no final do código para "chamar" os elementos, então eu nã preciso criar vários blocos repetidos de código para cada seção.
 
     const form = document.querySelector(formId);
     const taskInput = document.querySelector(inputId);
@@ -28,7 +28,7 @@ function inicializeAll(formId, inputId, taskId) {
         const destinatoionList = e.currentTarget.querySelector("ol");
 
         if (destinatoionList) {
-        destinatoionList.insertBefore(draggedItem, destinatoionList.firstChild);
+            destinatoionList.insertBefore(draggedItem, destinatoionList.firstChild);
         }
     }
 
@@ -39,7 +39,7 @@ function inicializeAll(formId, inputId, taskId) {
         const newTask = taskInput.value.trim();
 
         if (newTask == "") {
-        return; // esse return est impedindo que tarefas vazias sejam adicionadas à lista, caso haja uma tentativa de adicionar uma tarefa sem texto, a função retorna do começo e fica aguardando uma nova entrada com dados válidos.
+            return; // esse return est impedindo que tarefas vazias sejam adicionadas à lista, caso haja uma tentativa de adicionar uma tarefa sem texto, a função retorna do começo e fica aguardando uma nova entrada com dados válidos.
         }
         const taskItem = document.createElement("li");
 
@@ -63,24 +63,25 @@ function inicializeAll(formId, inputId, taskId) {
         if (removeButton) {
             removeButton.parentElement.remove();
 
-        return;
+            return;
         }
 
 
         const completedButton = event.target.closest(".completed-btn");
         if (completedButton) {
-        const listItem = completedButton.parentElement; //li que tem o botão (filho).
-        const list = listItem.parentElement; //lista que contem o li (filho).
-        const textSpan = listItem.querySelector("span");
+            const listItem = completedButton.parentElement; //li que tem o botão (filho).
+            const list = listItem.parentElement; //lista que contem o li (filho).
+            const textSpan = listItem.querySelector("span");
 
-        textSpan.classList.toggle("completed");
-        if (textSpan.classList.contains("completed")) {
-            completedButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>`;
-            list.appendChild(listItem);
-        } else {
-            completedButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>`;
-            list.insertBefore(listItem, list.firstChild);
-        }
+            textSpan.classList.toggle("completed");
+            if (textSpan.classList.contains("completed")) {
+                completedButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>`;
+                list.appendChild(listItem);
+            } else {
+                completedButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>`;
+                list.insertBefore(listItem, list.firstChild);
+            }
+            salvaDadosNoNavegador();
         }
     }
     //esse comando fica monitorando o envio do form, para impedir que a página recarregue e que a tarefa seja adicionada na lista.
@@ -91,4 +92,4 @@ function inicializeAll(formId, inputId, taskId) {
 inicializeAll("#form-now", "#task-now", "#list-now");
 inicializeAll("#form-schedule", "#task-schedule", "#list-schedule");
 inicializeAll("#form-not-urgent", "#task-not-urgent", "#list-not-urgent");
-inicializeAll("#form-not-important","#task-not-important","#list-not-important");
+inicializeAll("#form-not-important", "#task-not-important", "#list-not-important");
