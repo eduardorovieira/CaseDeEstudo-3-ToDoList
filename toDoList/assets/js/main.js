@@ -1,9 +1,6 @@
-const inputTarefa = document.querySelector('.input-tarefa');
+const inputTarefa = document.querySelector('#input-tarefa-agora');
 const btnTarefa = document.querySelector('.btn-tarefa');
-const listaTarefas = document.querySelector('.tarefas');
-
-
-recuperaTarefasdoNavegador();
+const listaTarefas = document.querySelector('#tarefas-agora');
 
 
 document.addEventListener('click', function(e) {
@@ -12,7 +9,7 @@ document.addEventListener('click', function(e) {
     if (el.classList.contains('material-symbols-outlined')) {
         el.parentElement.remove();
     }
-    salvaTarefas();
+        salvaTarefas();
 });
 
 btnTarefa.addEventListener('click', function() {
@@ -40,6 +37,7 @@ function removeTarefa(li) {
     botaoApagar.innerText = 'delete';
     botaoApagar.setAttribute('class', 'material-symbols-outlined');
     li.appendChild(botaoApagar);
+    salvaTarefas();
 }
 
 function limpaInput() {
@@ -82,10 +80,12 @@ function salvaTarefas() {
 
 
 function recuperaTarefasdoNavegador() {
-    const tarefas = localStorage.getItem('tarefas');
+    const tarefas = localStorage.getItem('tarefas')
     const listaDeTarefas = JSON.parse(tarefas);
 
         for (let tarefa of listaDeTarefas) {
             criaTarefa(tarefa);
-        };
+        }
 }
+
+recuperaTarefasdoNavegador();

@@ -99,53 +99,6 @@ article > h3 {
     padding: 0.5em;
 }
 
-form {
-    text-align: center;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-form > input {
-    width:  60%;
-    height: 40px;
-    border-radius: 50px;
-    border: none;
-    padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.599);
-}
-form > button {
-    width: 10%;
-    height: 40px;
-    border-radius: 50px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.599);
-    cursor: pointer;
-}
-form > button:hover {
-    background-color: rgba(255, 255, 255, 0.899);
-}
-form > button:active {
-    transform: scale(0.98);
-}
-
-ol {
-    padding: 0;
-    width: 95%;
-    margin: auto auto 5px ;
-    overflow-y: auto;
-    background-color: rgba(240, 255, 255, 0.127);
-    border-radius: 1em;
-    flex-grow: 1;
-    overflow-y: auto;
-    min-height: 1px;
-}
-
-ol::-webkit-scrollbar {
-    display: none;
-}
 li {
     background-color: rgba(255, 255, 255, 0);
     padding: 10px;
@@ -164,11 +117,11 @@ li {
 
 }
 
-li button{
+ul li button {
     color: rgb(199, 10, 10);
     align-items: flex-end;
     order: 1;
-    margin-left:auto;
+    margin-left: auto;
 
 }
 .completed {
